@@ -5,6 +5,7 @@ export const StyledContainer = styled.div`
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding: 0 5rem;
     height: 100vh;
     background-image: url(${bg1});
@@ -18,14 +19,27 @@ export const StyledContainer = styled.div`
     }
 
     .more-info {
-        display: inline-block;
+        display: flex;
+        align-items: center;
         margin-top: 50px;
         color: inherit;
+        gap: 12px;
+        text-decoration: none;
         :hover {
             color: #3957ca;
-            scale: 1.01;
             transition: all ease-in 0.2s;
+            .arrow-icon {
+                transform: translateX(4px);
+                transition: inherit;
+            }
         }
+    }
+
+    @media (max-width: 768px) {
+        background-size: 110%;
+        padding: 0 2.5rem;
+    }
+    @media (max-width: 640px) {
     }
 `;
 
@@ -45,6 +59,20 @@ export const Title = styled.h1`
     color: #3957ca;
     text-transform: uppercase;
 `;
+export const Description = styled.p`
+    font-size: 18px;
+    margin-bottom: 84px;
+    width: 40%;
+    span {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+        width: 90%;
+        margin-bottom: 56px;
+    }
+`;
 
 export const Timer = styled.div`
     margin-top: 16px;
@@ -62,8 +90,8 @@ export const Timer = styled.div`
     .timer-label {
         font-size: 15px;
         text-align: center;
-        padding: 8px 20px;
-        width: 50px;
+        padding: 6px 20px;
+        width: 60px;
         background-color: #3957ca;
         color: #fff;
         border-radius: 16px;
@@ -85,15 +113,10 @@ export const ContactWrapper = styled.div`
             width: 30px;
         }
     }
-`;
 
-export const Description = styled.p`
-    font-size: 18px;
-    margin-bottom: 84px;
-
-    span {
-        display: block;
-        width: 60%;
-        margin-bottom: 20px;
+    @media (max-width: 768px) {
+        flex-direction: column;
+        margin-top: 40px;
+        gap: 0;
     }
 `;
